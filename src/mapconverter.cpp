@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <GLFW/glfw3.h>
-#include <emscripten.h>
 
 int main(void)
 {
@@ -27,14 +26,26 @@ int main(void)
         100, 300, 0
     };
 
-   while(!glfwWindowShouldClose(window)){
-        glClear(GL_COLOR_BUFFER_BIT);
-        glEnableClientState(GL_VERTEX_ARRAY);
-        glVertexPointer(3, GL_FLOAT, 0, lineVertices);
-        glDrawArrays(GL_LINES, 0, 2);
-        glDisableClientState(GL_VERTEX_ARRAY);
-        glfwSwapBuffers(window);
-        glfwPollEvents();
+    GLfloat lineVertices2[] = {
+        200, 100, 0,
+        000, 200, 0
+    };
+    GLfloat* lines[] = {lineVertices, lineVertices2};
+
+    while(!glfwWindowShouldClose(window)){
+       // for (int i = 0; i++ ; i < 2){
+            glClear(GL_COLOR_BUFFER_BIT);
+            glEnableClientState(GL_VERTEX_ARRAY);
+
+            glVertexPointer(3, GL_FLOAT, 0, lines[1]);
+            glVertexPointer(3, GL_FLOAT, 0, lines[0]);
+            glDrawArrays(GL_LINES, 0, 2);
+            glDisableClientState(GL_VERTEX_ARRAY);
+            glfwSwapBuffers(window);
+            glfwPollEvents();   
+        //}
+        
+        
     }
     glfwTerminate( );
     return 0;
