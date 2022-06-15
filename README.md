@@ -1,6 +1,7 @@
 # SLAM
 
-The goal of this project is to simulate the SLAM algorithm with c++ on linux using opengl
+The goal of this project is to simulate the SLAM algorithm with c++ on linux using opengl. 
+After which a prototype handcontroller or small car will be used to map real life rooms.
 
 ## Getting started
 
