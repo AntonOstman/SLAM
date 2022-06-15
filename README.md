@@ -1,6 +1,6 @@
 # SLAM
 
-
+The goal of this project is to simulate the SLAM algorithm with c++ on ubuntu using opengl
 
 ## Getting started
 
